@@ -1,0 +1,19 @@
+---
+name: Omega Centauri (NGC 5139)
+ra: 201.697
+dec: -47.4795
+radius: 0.5
+dist_pc: 5240
+data_file: data/omega_centauri_gaia.fits
+query: |
+  SELECT source_id, phot_g_mean_mag, phot_bp_mean_mag, phot_rp_mean_mag
+  FROM gaiadr3.gaia_source
+  WHERE 1=CONTAINS(
+      POINT('ICRS', ra, dec),
+      CIRCLE('ICRS', 201.697, -47.4795, 0.5)
+  )
+  AND pmra BETWEEN -5.0 AND -1.5
+  AND pmdec BETWEEN -8.5 AND -5.0
+  AND phot_g_mean_mag IS NOT NULL
+  AND phot_bp_mean_mag IS NOT NULL
+  AND phot_rp_mean_mag IS NOT NULL
