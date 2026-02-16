@@ -1,0 +1,8 @@
+{
+  "name": "47 Tucanae (NGC 104)",
+  "ra": 6.0236,
+  "dec": -72.0812,
+  "radius": 0.2,
+  "dist_pc": 4500,
+  "data_file": "data/47_tucanae_gaia.fits"
+}
